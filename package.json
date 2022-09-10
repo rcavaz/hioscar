@@ -1,0 +1,12 @@
+{
+  "name": "HiOscar",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/rcavaz/hioscar.git",
+  "author": "Francisco Ramos <rcavaz8f@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.25.2"
+  },
+  "scripts": {}
+}
