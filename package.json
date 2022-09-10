@@ -8,5 +8,10 @@
   "devDependencies": {
     "@playwright/test": "^1.25.2"
   },
-  "scripts": {}
+  "scripts": {
+    "test": "yarn playwright test",
+    "test:chromium": "yarn playwright test --project=chromium",
+    "test:debug": "yarn playwright test --debug",
+    "codegen": "yarn playwright codegen"
+  }
 }
