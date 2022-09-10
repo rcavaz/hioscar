@@ -1,0 +1,19 @@
+USAGE:
+    cli <command>
+
+COMMANDS:
+    build
+            Build the project's docker image.
+
+    run
+            Run the test automation suite. The test reports will be copied
+            to the current directory and then it will delete the container.
+            This will also build the image if it does not exist yet.
+
+    dev
+            Run a temporary container. This is for development only, you
+            don't need it.
+
+    clean
+            Prune unused docker images. This is meant for development, you
+            may not need it.
