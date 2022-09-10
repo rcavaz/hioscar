@@ -10,7 +10,7 @@ function main() {
             build_image;;
         run)
             run_image;;
-        debug)
+        dev)
             run_disposable_image;;
         clean)
             clean;;
