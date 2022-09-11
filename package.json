@@ -10,7 +10,6 @@
   },
   "scripts": {
     "test": "yarn playwright test",
-    "test:e2e": "yarn playwright test",
     "test:chromium": "yarn playwright test --project=chromium",
     "test:chromium:debug": "yarn playwright test --project=chromium --debug",
     "codegen": "yarn playwright codegen"
