@@ -32,9 +32,9 @@ function _build_image_if_missing() {
 function run_image() {
     _build_image_if_missing
 
-    local test_reports='playwright-reports'
+    local test_reports='playwright-report'
     docker run --name $container_name $image_name:$image_tag
-    # docker cp $container_name:/app/$test_reports .
+    docker cp $container_name:/app/$test_reports .
     docker commit $container_name hioscar/debug_image
     docker rm -f $container_name
 }
