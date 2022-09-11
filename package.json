@@ -11,7 +11,7 @@
   "scripts": {
     "test": "yarn playwright test",
     "test:chromium": "yarn playwright test --project=chromium",
-    "test:debug": "yarn playwright test --debug",
+    "test:chromium:debug": "yarn playwright test --project=chromium --debug",
     "codegen": "yarn playwright codegen"
   }
 }
