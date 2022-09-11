@@ -10,8 +10,10 @@ function main() {
             build_image;;
         run)
             run_image;;
-        dev)
-            run_disposable_image;;
+        tmp)
+            run_tmp_image;;
+        debug)
+            run_last_saved_container;;
         clean)
             clean;;
         *)
@@ -20,9 +22,7 @@ function main() {
 }
 
 function build_image() {
-    echo "Built on: `date`" > LOG.txt
     docker build -t $image_name:$image_tag .
-    rm LOG.txt
 }
 
 function _build_image_if_missing() {
@@ -32,21 +32,23 @@ function _build_image_if_missing() {
 function run_image() {
     _build_image_if_missing
 
-    [[ -f LOG.txt ]] && rm LOG.txt
-
+    local test_reports='playwright-reports'
     docker run --name $container_name $image_name:$image_tag
-    docker cp $container_name:/app/LOG.txt .
+    # docker cp $container_name:/app/$test_reports .
+    docker commit $container_name hioscar/debug_image
     docker rm -f $container_name
-
-    cat LOG.txt
-    rm LOG.txt
 }
 
-function run_disposable_image() {
-    docker run --rm -it $image_name:$image_tag
+function run_tmp_image() {
+    docker run --rm -it --entrypoint=bash $image_name:$image_tag
+}
+
+function run_last_saved_container() {
+    docker run --rm -it --entrypoint=bash hioscar/debug_image
 }
 
 function clean() {
+    docker container prune -f
     docker image prune -a -f
 }
 
