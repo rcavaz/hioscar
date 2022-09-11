@@ -10,8 +10,12 @@
   },
   "scripts": {
     "test": "yarn playwright test",
+    "test:e2e": "cross-env E2E=true yarn playwright test",
     "test:chromium": "yarn playwright test --project=chromium",
     "test:chromium:debug": "yarn playwright test --project=chromium --debug",
     "codegen": "yarn playwright codegen"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3"
   }
 }
