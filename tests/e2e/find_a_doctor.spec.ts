@@ -20,5 +20,17 @@ test.describe('end-to-end tests only', () => {
     await home.open();
     await home.findDoctor();
     await expect(home.page).toHaveURL(/.*care-options/);
+
+    await home.page.screenshot({ path: 'screenshot.png' });
   });
+
+  /**
+   * TODO:
+   * 1. Find a Doctor
+   * 2. Find doctors & drugs
+   * 3. Search network
+   * 4. Select 2022
+   *    a. Select employer provider -> Oscar -> California -> Continue -> Covered drugs
+   *    b. Select employer provider -> Oscar -> California -> Continue -> In-network hospitals
+   */
 });

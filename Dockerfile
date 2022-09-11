@@ -5,4 +5,4 @@ RUN yarn install
 
 FROM baseline AS builder
 WORKDIR /app
-ENTRYPOINT ["yarn", "test"]
+ENTRYPOINT ["yarn", "test:e2e"]

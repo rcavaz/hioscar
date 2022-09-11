@@ -17,7 +17,7 @@ test.describe('integration tests only', () => {
   test.skip(process.env.INTEGRATION !== 'true', 'Integration tests only');
 
   test('Find a Doctor button redirects to /care-options', async ({ home }) => {
-    // test.fixme(); // TODO: route calls to stay on page, then verify correct page was requested
+    test.fixme(); // TODO: route calls to stay on page, then verify correct page was requested
     await home.open();
     await home.findDoctor();
     await expect(home.page).toHaveURL(/.*care-options/);
