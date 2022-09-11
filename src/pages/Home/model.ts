@@ -1,5 +1,6 @@
-import { Locator, Page } from "@playwright/test"
+import { Locator } from "@playwright/test"
 import { BasePage } from "../../../lib/basePage"
+import { abortProductAnalyticsRequests } from "../../../lib/routes";
 import { selectors } from "./selectors";
 
 export class HomePage extends BasePage {
@@ -16,11 +17,4 @@ export class HomePage extends BasePage {
     async findDoctor() {
         await this.locators.btnFindDoctor.click();
     }
-}
-
-async function abortProductAnalyticsRequests(page: Page) {
-    await page.route('https://product-analytics.hioscar.com/v1/t', route => {
-        const request = route.request();
-        return route.abort();
-    })
 }
