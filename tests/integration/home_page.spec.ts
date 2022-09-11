@@ -13,10 +13,11 @@ const test = base.extend<PageFixtures>({
   }
 });
 
-test.describe('end-to-end tests only', () => {
-  test.skip(process.env.E2E !== 'true', 'End-to-End test only');
+test.describe('integration tests only', () => {
+  test.skip(process.env.INTEGRATION !== 'true', 'Integration tests only');
 
-  test('navigates to Find a Doctor page', async ({ home }) => {
+  test('Find a Doctor button redirects to /care-options', async ({ home }) => {
+    // test.fixme(); // TODO: route calls to stay on page, then verify correct page was requested
     await home.open();
     await home.findDoctor();
     await expect(home.page).toHaveURL(/.*care-options/);

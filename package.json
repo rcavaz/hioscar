@@ -9,7 +9,7 @@
     "@playwright/test": "^1.25.2"
   },
   "scripts": {
-    "test": "yarn playwright test",
+    "test": "cross-env INTEGRATION=true yarn playwright test",
     "test:e2e": "cross-env E2E=true yarn playwright test",
     "test:chromium": "yarn playwright test --project=chromium",
     "test:chromium:debug": "yarn playwright test --project=chromium --debug",
