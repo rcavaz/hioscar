@@ -1,4 +1,4 @@
-import { Locator } from "@playwright/test"
+import { Locator, Page } from "@playwright/test"
 import { BasePage } from "../../../lib/basePage"
 import { abortProductAnalyticsRequests } from "../../../lib/routes";
 import { selectors } from "./selectors";
@@ -17,4 +17,10 @@ export class HomePage extends BasePage {
     async findDoctor() {
         await this.locators.btnFindDoctor.click();
     }
+}
+
+export function HomePageFactory(page: Page) {
+    const model = new HomePage(page, selectors);
+    model.buildLocators();
+    return model;
 }

@@ -1,6 +1,6 @@
 import { Locator, Page } from '@playwright/test';
 
-type SelectorsMap = {
+export type SelectorsMap = {
     [x: string]: string;
 };
 
@@ -23,7 +23,7 @@ export abstract class BasePage {
     // Do not forget to call buildLocators() within your implementation of open()
     abstract open(): Promise<void>;
 
-    protected buildLocators(): void {
+    public buildLocators(): void {
         this.locators = Object.keys(this.selectors)
         .map((k) => ({key: k, value: this.page.locator(this.selectors[k])}))
         .reduce((acc, curr) => {
