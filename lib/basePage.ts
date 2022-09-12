@@ -21,7 +21,7 @@ export abstract class BasePage {
     }
 
     // Do not forget to call buildLocators() within your implementation of open()
-    abstract open(): Promise<void>;
+    abstract open(state?: any): Promise<void>;
 
     public buildLocators(): void {
         this.locators = Object.keys(this.selectors)

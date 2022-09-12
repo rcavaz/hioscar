@@ -8,7 +8,10 @@ export class HomePage extends BasePage {
 
     readonly url: string = 'https://www.hioscar.com';
 
-    async open() {
+    async open(state?: any) {
+        // if (state) {
+        //     // Inject state here ...
+        // }
         await abortProductAnalyticsRequests(this.page);
         await this.page.goto(this.url);
         this.buildLocators();

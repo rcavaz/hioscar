@@ -8,7 +8,10 @@ export class CareOptionsPage extends BasePage {
 
     readonly url: string = 'https://www.hioscar.com/care-options';
 
-    async open() {
+    async open(state?: any) {
+        // if (state) {
+        //     // Inject state here ...
+        // }
         await abortProductAnalyticsRequests(this.page);
         await this.page.goto(this.url);
         this.buildLocators();
