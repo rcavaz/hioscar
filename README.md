@@ -16,6 +16,10 @@ Once done, you can clean your docker environment with the following:
 bash cli.sh clean
 ```
 
+### More on the CLI shell script
+
+This is just a wrapper around docker commands to greatly simplify interacting with this project.
+
 ## Running with Node
 
 ```sh
