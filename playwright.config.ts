@@ -15,6 +15,7 @@ enum ScreenshotOptions {
 }
 const globalProjectSettings = {
   screenshot: ScreenshotOptions.ON_FAILURE,
+  headless: process.env.HEADLESS === 'false' ? false : true,
 };
 
 const config: PlaywrightTestConfig = {
