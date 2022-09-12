@@ -16,5 +16,6 @@
   },
   "dependencies": {
     "dotenv": "^16.0.2"
-  }
+  },
+  "packageManager": "yarn@3.2.3"
 }
