@@ -27,7 +27,7 @@ When developing, ensure you are using the same node environment than the one bei
 
 For this project, I choose the **yarn** over **npm** because it downloads dependencies faster by parallelizing downloads.
 
-Yarn also offers an advanced feature called [Zero Installs][1] which can greatly improve the performance of docker builds and, consequently, the pipelines. This is done by storing compressing the node_modules in such a way that's friendly to repositories such as **git** so you can get the dependencices right after you checkout a branch. This feature is not set for this project by default.
+Yarn also offers an advanced feature called [Zero Installs][1] which can greatly improve the performance of docker builds and, consequently, the pipelines. This is done by storing compressing the node_modules in such a way that's friendly to repositories such as **git** so you can get the dependencices right after you checkout a branch. This feature is enabled for this project, you may need to upgrade your version of **yarn** for this to work properly in your local environment.
 
 ### Dotenv
 
