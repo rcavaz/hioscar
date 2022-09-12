@@ -12,6 +12,6 @@ test.describe('end-to-end tests only', () => {
     const care = CareOptionsPageFactory(page);
     await care.selectaNetwork();
 
-    await expect(home.page).toHaveURL(/.*care-options/);
+    await expect(home.page).toHaveURL('https://www.hioscar.com/search/?networkId=006&year=2022');
   });
 });
