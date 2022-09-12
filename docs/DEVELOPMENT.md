@@ -59,7 +59,16 @@ If you would like to test a page with a given context, such context must be defi
 
 With these types of tests transitioning between pages is ok but assertions are only made at the very end of the user journey.
 
+### Better commits
+
+Because maintaining a clean history of changes is also a good practice, this project ships with a [commit template][5] which can be set for the local project with the follwing command:
+
+```sh
+git config commit.tempalte ./git-commit-template.txt
+```
+
 [1]: https://yarnpkg.com/features/zero-installs
 [2]: https://playwright.dev/docs/test-pom
 [3]: https://playwright.dev/docs/locators
 [4]: https://playwright.dev/docs/api/class-route
+[5]: ../git-commit-template.txt
