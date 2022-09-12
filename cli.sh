@@ -4,6 +4,7 @@ declare image_name='hioscar'
 declare image_tag='test'
 declare container_name='hioscar'
 
+# This script is written using a functional programming approach to maximize readability.
 function main() {
     case $1 in
         build)
@@ -55,6 +56,7 @@ function clean() {
 }
 
 function help() {
+    # Keeping the help text separately will allow for a much better experience when editing.
     cat docs/cli_help.txt
 }
 
