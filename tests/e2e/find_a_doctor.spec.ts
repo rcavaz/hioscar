@@ -9,9 +9,9 @@ test.describe('end-to-end tests only', () => {
     const home = HomePageFactory(page);
     await home.open();
     await home.findDoctor();
-    await expect(home.page).toHaveURL(/.*care-options/);
-
     const care = CareOptionsPageFactory(page);
     await care.selectaNetwork();
+
+    await expect(home.page).toHaveURL(/.*care-options/);
   });
 });
