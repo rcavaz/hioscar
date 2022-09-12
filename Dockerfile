@@ -5,5 +5,5 @@ RUN yarn install
 
 FROM baseline AS builder
 WORKDIR /app
-ENV INTEGRATION=false E2E=true
+ENV CI=true E2E=true INTEGRATION=false
 ENTRYPOINT ["yarn", "test"]
